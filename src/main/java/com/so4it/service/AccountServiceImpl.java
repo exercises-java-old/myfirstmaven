@@ -27,4 +27,9 @@ public class AccountServiceImpl implements  AccountService{
         }
         return 0.0d;
     }
+
+    @Override
+    public Double calculateInterest(Long id) {
+        return null;
+    }
 }

@@ -6,4 +6,9 @@ public class AnotherAccountServiceImpl implements  AccountService{
     public Double getBalance(Long id) {
         return 42d;
     }
+
+    @Override
+    public Double calculateInterest(Long id) {
+        return null;
+    }
 }

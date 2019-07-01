@@ -12,7 +12,10 @@ public class MySpringMain {
 
     public static void main(String[] args){
 
-        ApplicationContext applicationContext = new GenericXmlApplicationContext(args);
+        ApplicationContext applicationContext = new GenericXmlApplicationContext("DaoTier.xml");
+
+
+
         AccountDao dao = applicationContext.getBean(AccountDao.class);
         Optional<Account> optional = dao.read(1L);
         System.out.println("isPresent:" + optional.isPresent());
@@ -22,7 +25,9 @@ public class MySpringMain {
         System.out.println("isPresent:" + optional.isPresent());
 
         AccountService accountService = applicationContext.getBean(AccountService.class);
+        AccountService accountService2 = applicationContext.getBean(AccountService.class);
         System.out.println(accountService.getBalance(1L));
+        System.out.println(accountService + ", "+accountService2);
 
     }
 }

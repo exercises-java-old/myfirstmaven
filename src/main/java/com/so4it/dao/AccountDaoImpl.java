@@ -27,7 +27,8 @@ public class AccountDaoImpl implements AccountDao{
 
     @Override
     public Collection<Account> readAccountsWithBalanceOver(Double limit) {
-        return accounts.values().stream()
+        return accounts.values()
+                .stream()
                 .filter(account -> account.getBalance() > limit)
                 .collect(Collectors.toSet());
     }
